@@ -65,12 +65,14 @@ function Home() {
       <div className="ingredient-list">
         {ingredients.map((ingredient) => (
           <div key={ingredient.strIngredient} className="ingredient-card">
-            <h3>{ingredient.strIngredient}</h3>
-            <img
-              src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`}
-              alt={ingredient.strIngredient}
-              className="ingredient-image"
-            />
+            <Link to={`/ingredient/${ingredient.strIngredient}`}>
+              <h3>{ingredient.strIngredient}</h3>
+              <img
+                src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`}
+                alt={ingredient.strIngredient}
+                className="ingredient-image"
+              />
+            </Link>
           </div>
         ))}
       </div>
